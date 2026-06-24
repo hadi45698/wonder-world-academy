@@ -85,20 +85,92 @@
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
-        .nav-links .whatsapp-btn:hover {
-            background-color: #1ebd54;
-            transform: translateY(-2px);
+        /* Menu Icon for Mobile Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
             color: white;
         }
 
-        /* Main Container Restructuring (Bari Web View) */
+        /* Mobile Sidebar Container */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100vh;
+            background-color: #0f172a;
+            z-index: 2000;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: right 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-close {
+            align-self: flex-end;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #cbd5e1;
+        }
+
+        .mobile-sidebar a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mobile-sidebar a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-sidebar .whatsapp-btn-mob {
+            background-color: #25d366;
+            color: white !important;
+            padding: 12px;
+            border-radius: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            border-bottom: none;
+        }
+
+        /* Dark overlay for sidebar background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            display: none;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        /* Main Layout Frame */
         .main-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 30px 4%;
         }
 
-        /* Advanced Dynamic Hero Section with Animation Slide */
+        /* Hero Image Carousel Slider Structure */
         .hero-slider {
             position: relative;
             width: 100%;
@@ -124,7 +196,6 @@
             justify-content: center;
         }
 
-        /* 3 Different High Quality Premium Educational Hero Images */
         .slide:nth-child(1) {
             background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470');
             animation-delay: 0s;
@@ -134,7 +205,7 @@
             animation-delay: 5s;
         }
         .slide:nth-child(3) {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1470');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1196303273860-91807d4b2e65?q=80&w=1470');
             animation-delay: 10s;
         }
 
@@ -164,7 +235,6 @@
         .hero-text p {
             font-size: 1.3rem;
             margin-bottom: 35px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
             color: #f1f5f9;
         }
 
@@ -184,7 +254,6 @@
         .cta-btn:hover {
             background-color: #0284c7;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.6);
         }
 
         /* Generic Section Card Design */
@@ -260,7 +329,6 @@
             border-left: 5px solid var(--secondary-color);
             margin-bottom: 20px;
             border-radius: 4px 12px 12px 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         .faq-item h4 {
@@ -269,7 +337,7 @@
             font-size: 1.15rem;
         }
 
-        /* Contact Form Grid and fields styling */
+        /* Contact Form Grid layout configuration */
         .contact-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,10 +381,9 @@
 
         .contact-form button:hover {
             background-color: #1d4ed8;
-            transform: translateY(-2px);
         }
 
-        /* Footer Extended Structure with Quick Links inside */
+        /* Footer Extended Structure */
         footer {
             background-color: #0f172a;
             color: #cbd5e1;
@@ -385,7 +452,7 @@
             font-size: 0.9rem;
         }
 
-        /* Clean & Optimized Fluid Responsive Breakpoints */
+        /* Optimized Media Queries - Mobile Sidebar & Hero Fixes */
         @media (max-width: 900px) {
             .contact-form {
                 grid-template-columns: 1fr;
@@ -397,28 +464,43 @@
 
         @media (max-width: 768px) {
             .navbar {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px;
+                padding: 15px 5%;
             }
             .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
+                display: none; /* Desktop Links Hidden */
             }
+            .menu-toggle {
+                display: block; /* Hamburger Icon visible */
+            }
+            
+            /* Responsive Mobile Hero Improvements */
             .hero-slider {
-                height: 400px;
+                height: 320px; /* Reduced box size for perfectly clean mobile fitting */
+                border-radius: 12px;
+                margin-bottom: 25px;
             }
             .hero-text h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+            .hero-text p {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+            .cta-btn {
+                padding: 10px 22px;
+                font-size: 0.9rem;
             }
             .section-padding {
                 padding: 30px 20px;
+                border-radius: 12px;
             }
         }
     </style>
 </head>
 <body>
+
+    <div class="sidebar-overlay" id="overlay"></div>
 
     <header class="navbar">
         <div class="logo">
@@ -430,11 +512,28 @@
             <a href="#life-at-school">Life at School</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact Us</a>
-            <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-btn">
+            <a href="https://wa.me/923142193672" target="_blank" class="whatsapp-btn">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
             </a>
         </nav>
+        <div class="menu-toggle" id="menuOpenBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
+
+    <div class="mobile-sidebar" id="sidebarMenu">
+        <div class="sidebar-close" id="menuCloseBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <a href="#home" class="mob-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="mob-link"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        <a href="#life-at-school" class="mob-link"><i class="fa-solid fa-images"></i> Life at School</a>
+        <a href="#faq" class="mob-link"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+        <a href="#contact" class="mob-link"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        <a href="https://wa.me/923142193672" target="_blank" class="whatsapp-btn-mob">
+            <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
+        </a>
+    </div>
 
     <div class="main-container">
         
@@ -448,7 +547,7 @@
             </div>
             <div class="slide">
                 <div class="hero-text">
-                    <h1>Innovative & Modern Learning environment</h1>
+                    <h1>Innovative & Modern Learning Environment</h1>
                     <p>Empowering young minds with state-of-the-art facilities, conceptual study workflows, and professional educational mentorship.</p>
                     <a href="#about" class="cta-btn">Explore Our Method</a>
                 </div>
@@ -487,7 +586,7 @@
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1567057404535-4e374d1bfac8?q=80&w=600" alt="Science Lab Projects">
+                    <img src="https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?q=80&w=600" alt="Science Lab Projects">
                     <div class="gallery-info">
                         <h3>Practical Exploration</h3>
                         <p>Encouraging kids to perform experiments, build creative arts, and gain powerful lifelong confidence skills.</p>
@@ -511,11 +610,11 @@
         <section id="contact" class="section-padding">
             <h2>Get In Touch</h2>
             <p>Have questions regarding admission fees or academic courses? Send your query directly using the form below:</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Full Name" required>
-                <input type="email" placeholder="Your Email Address" required>
+            <form class="contact-form" id="whatsappContactForm">
+                <input type="text" id="formName" placeholder="Your Full Name" required>
+                <input type="email" id="formEmail" placeholder="Your Email Address" required>
                 <div class="full-width">
-                    <textarea placeholder="Write Your Message Detail..." rows="5" required></textarea>
+                    <textarea id="formMessage" placeholder="Write Your Message Detail..." rows="5" required></textarea>
                 </div>
                 <div>
                     <button type="submit">Submit Secure Message</button>
@@ -544,7 +643,7 @@
             </div>
             <div class="footer-box">
                 <h4>Contact Details</h4>
-                <p><i class="fa-solid fa-phone"></i> Phone: +92 300 1234567</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +92 314 2193672</p>
                 <p><i class="fa-solid fa-envelope"></i> Email: info@wonderworld.edu.pk</p>
             </div>
             <div class="footer-box">
@@ -556,6 +655,50 @@
             <p>&copy; 2026 Wonder World Academy. All Rights Reserved. Designed to perfection.</p>
         </div>
     </footer>
+
+    <script>
+        const sidebar = document.getElementById('sidebarMenu');
+        const overlay = document.getElementById('overlay');
+        const openBtn = document.getElementById('menuOpenBtn');
+        const closeBtn = document.getElementById('menuCloseBtn');
+        const mobLinks = document.querySelectorAll('.mob-link');
+
+        // Functions to open/close sidebar
+        function openSidebar() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        openBtn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+        mobLinks.forEach(link => link.addEventListener('click', closeSidebar));
+
+        // Form Submission to WhatsApp redirection script
+        document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const message = document.getElementById('formMessage').value;
+            const whatsappNumber = "923142193672"; 
+            
+            // Text Structure for user visibility
+            const encodedText = encodeURIComponent(
+                `*New Query From Website*\n\n` +
+                `*Name:* ${name}\n` +
+                `*Email:* ${email}\n` +
+                `*Message:* ${message}`
+            );
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
+        });
+    </script>
 
 </body>
 </html>
