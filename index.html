@@ -50,11 +50,13 @@
             gap: 12px;
         }
 
-        /* Custom Logo Class for layout handling */
+        /* Perfectly Rounded Circle Logo Styling */
         .site-logo {
             height: 50px;
-            width: auto;
-            object-fit: contain;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-color);
         }
 
         .navbar .logo h2 {
@@ -515,13 +517,17 @@
 </head>
 <body>
 
+    <!-- Dark Overlay background for mobile drawer interaction -->
     <div class="sidebar-overlay" id="overlay"></div>
 
+    <!-- Header Navigation Section -->
     <header class="navbar">
         <div class="logo">
+            <!-- Render Rounded Local logo.png Asset inside header -->
             <img src="logo.png" alt="Wonder World Academy Logo" class="site-logo">
             <h2>Wonder World Academy</h2>
         </div>
+        <!-- Desktop Nav Links -->
         <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
@@ -532,11 +538,13 @@
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
             </a>
         </nav>
+        <!-- Mobile Burger Menu Icon -->
         <div class="menu-toggle" id="menuOpenBtn">
             <i class="fa-solid fa-bars"></i>
         </div>
     </header>
 
+    <!-- Mobile Drawer Sidebar component -->
     <div class="mobile-sidebar" id="sidebarMenu">
         <div class="sidebar-close" id="menuCloseBtn">
             <i class="fa-solid fa-xmark"></i>
@@ -551,8 +559,10 @@
         </a>
     </div>
 
+    <!-- Main Content Frame Container -->
     <div class="main-container">
         
+        <!-- Premium Dynamic Carousel/Slider Hero Component -->
         <section id="home" class="hero-slider">
             <div class="slide">
                 <div class="hero-text">
@@ -577,11 +587,13 @@
             </div>
         </section>
 
+        <!-- About Us Content Section -->
         <section id="about" class="section-padding">
             <h2>About Our Academy</h2>
             <p>At Wonder World Academy, we provide a premium world-class learning environment engineered to empower children. Our goal is to focus on top-tier education alongside moral ethics. Equipped with highly qualified teachers, sophisticated conceptual training methodologies, science research ecosystems, and interactive learning infrastructure, we ensure every student achieves excellence.</p>
         </section>
 
+        <!-- Kids Showcase & Gallery Card Component Grid -->
         <section id="life-at-school" class="section-padding">
             <h2>Life at Wonder World Academy</h2>
             <p>Take a look at how our little stars learn, grow, play, and build crucial social skills daily inside our bright campus rooms:</p>
@@ -611,6 +623,7 @@
             </div>
         </section>
 
+        <!-- FAQ Content Section -->
         <section id="faq" class="section-padding">
             <h2>Frequently Asked Questions (FAQ)</h2>
             <div class="faq-item">
@@ -623,6 +636,7 @@
             </div>
         </section>
 
+        <!-- Dynamic WhatsApp Form Redirection Trigger -->
         <section id="contact" class="section-padding">
             <h2>Get In Touch</h2>
             <p>Have questions regarding admission fees or academic courses? Send your query directly using the form below:</p>
@@ -640,6 +654,7 @@
 
     </div>
 
+    <!-- Footer Component with Integrated Quick Links and Rounded logo.png -->
     <footer>
         <div class="footer-container">
             <div class="footer-box">
@@ -675,6 +690,7 @@
         </div>
     </footer>
 
+    <!-- Interactive Toggle Elements & WhatsApp Forwarding Logic script -->
     <script>
         const sidebar = document.getElementById('sidebarMenu');
         const overlay = document.getElementById('overlay');
