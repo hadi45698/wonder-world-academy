@@ -37,23 +37,30 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 15px 8%;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .navbar .logo h2 {
+        .navbar .logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 1.6rem;
-            letter-spacing: 0.5px;
         }
 
-        .navbar .logo i {
-            color: var(--secondary-color);
+        /* Custom Logo Class for layout handling */
+        .site-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .navbar .logo h2 {
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            font-weight: 700;
         }
 
         .nav-links {
@@ -196,6 +203,7 @@
             justify-content: center;
         }
 
+        /* Fixed 3 Working High Quality Premium Educational Hero Images */
         .slide:nth-child(1) {
             background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470');
             animation-delay: 0s;
@@ -205,7 +213,7 @@
             animation-delay: 5s;
         }
         .slide:nth-child(3) {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1196303273860-91807d4b2e65?q=80&w=1470');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1470');
             animation-delay: 10s;
         }
 
@@ -399,6 +407,13 @@
             margin: 0 auto;
         }
 
+        .footer-logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
         .footer-box h4 {
             color: white;
             margin-bottom: 20px;
@@ -467,15 +482,15 @@
                 padding: 15px 5%;
             }
             .nav-links {
-                display: none; /* Desktop Links Hidden */
+                display: none;
             }
             .menu-toggle {
-                display: block; /* Hamburger Icon visible */
+                display: block;
             }
             
             /* Responsive Mobile Hero Improvements */
             .hero-slider {
-                height: 320px; /* Reduced box size for perfectly clean mobile fitting */
+                height: 320px;
                 border-radius: 12px;
                 margin-bottom: 25px;
             }
@@ -504,7 +519,8 @@
 
     <header class="navbar">
         <div class="logo">
-            <h2><i class="fa-solid fa-graduation-cap"></i> Wonder World Academy</h2>
+            <img src="logo.png" alt="Wonder World Academy Logo" class="site-logo">
+            <h2>Wonder World Academy</h2>
         </div>
         <nav class="nav-links">
             <a href="#home">Home</a>
@@ -617,7 +633,7 @@
                     <textarea id="formMessage" placeholder="Write Your Message Detail..." rows="5" required></textarea>
                 </div>
                 <div>
-                    <button type="submit">Submit Message</button>
+                    <button type="submit">Submit Secure Message</button>
                 </div>
             </form>
         </section>
@@ -627,7 +643,10 @@
     <footer>
         <div class="footer-container">
             <div class="footer-box">
-                <h4>Wonder World Academy</h4>
+                <div class="footer-logo-box">
+                    <img src="logo.png" alt="Wonder World Academy Logo" class="site-logo">
+                    <h4 style="margin-bottom:0; padding-bottom:0; border:none; display:inline-block;">Wonder World</h4>
+                </div>
                 <p>Nurturing young minds, touching hearts, and systematically structuralizing prosperous careers for a brilliant future tomorrow.</p>
                 <p><strong>Reg No:</strong> WWA-99824-2026</p>
             </div>
@@ -648,7 +667,7 @@
             </div>
             <div class="footer-box">
                 <h4>Campus Address</h4>
-                <p><i class="fa-solid fa-location-dot"></i> Shah rasool colony,Karachi,Pakistan</p>
+                <p><i class="fa-solid fa-location-dot"></i> Street 12, Sector F-10, Islamabad, Pakistan</p>
             </div>
         </div>
         <div class="footer-bottom">
