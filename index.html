@@ -14,11 +14,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* Yahan humne color combinations ko mazeed balance aur professional kiya hai */
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #0ea5e9;
-            --accent-color: #f59e0b;
-            --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            --primary-color: #0f172a; /* Premium Dark Navy Blue */
+            --secondary-color: #0284c7; /* Vibrant Sky/Logo Blue */
+            --accent-color: #f59e0b; /* Amber/Gold Accent for highlights */
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%); /* Soft light background */
             --text-dark: #1e293b;
             --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
@@ -31,7 +32,7 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: rgba(30, 58, 138, 0.95);
+            background-color: rgba(15, 23, 42, 0.95); /* Matched with primary dark theme */
             backdrop-filter: blur(10px);
             color: white;
             display: flex;
@@ -63,6 +64,7 @@
             font-size: 1.5rem;
             letter-spacing: 0.5px;
             font-weight: 700;
+            color: #ffffff;
         }
 
         .nav-links {
@@ -72,7 +74,7 @@
         }
 
         .nav-links a {
-            color: #e2e8f0;
+            color: #cbd5e1;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -92,6 +94,7 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            text-decoration: none;
         }
 
         /* Menu Icon for Mobile Toggle */
@@ -205,17 +208,17 @@
             justify-content: center;
         }
 
-        /* Fixed 3 Working High Quality Premium Educational Hero Images */
+        /* Background overlays enhanced for better text readability */
         .slide:nth-child(1) {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470');
             animation-delay: 0s;
         }
         .slide:nth-child(2) {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1422');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1422');
             animation-delay: 5s;
         }
         .slide:nth-child(3) {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1470');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1470');
             animation-delay: 10s;
         }
 
@@ -277,7 +280,7 @@
         }
 
         .section-padding h2 {
-            color: var(--primary-color);
+            color: #1e3a8a; /* Keeping section headers sharp dark blue */
             margin-bottom: 20px;
             font-size: 2rem;
             position: relative;
@@ -327,7 +330,7 @@
         }
 
         .gallery-info h3 {
-            color: var(--primary-color);
+            color: #1e3a8a;
             margin-bottom: 10px;
             font-size: 1.25rem;
         }
@@ -342,7 +345,7 @@
         }
 
         .faq-item h4 {
-            color: var(--primary-color);
+            color: #1e3a8a;
             margin-bottom: 8px;
             font-size: 1.15rem;
         }
@@ -371,13 +374,13 @@
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--primary-color);
+            border-color: var(--secondary-color);
             background-color: #fff;
-            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+            box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
         }
 
         .contact-form button {
-            background-color: var(--primary-color);
+            background-color: #1e3a8a;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -469,7 +472,7 @@
             font-size: 0.9rem;
         }
 
-        /* Optimized Media Queries - Mobile Sidebar & Hero Fixes */
+        /* Optimized Media Queries */
         @media (max-width: 900px) {
             .contact-form {
                 grid-template-columns: 1fr;
@@ -490,7 +493,6 @@
                 display: block;
             }
             
-            /* Responsive Mobile Hero Improvements */
             .hero-slider {
                 height: 320px;
                 border-radius: 12px;
@@ -517,34 +519,28 @@
 </head>
 <body>
 
-    <!-- Dark Overlay background for mobile drawer interaction -->
     <div class="sidebar-overlay" id="overlay"></div>
 
-    <!-- Header Navigation Section -->
     <header class="navbar">
         <div class="logo">
-            <!-- Render Rounded Local logo.png Asset inside header -->
             <img src="logo.png" alt="Wonder World Academy Logo" class="site-logo">
             <h2>Wonder World Academy</h2>
         </div>
-        <!-- Desktop Nav Links -->
         <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#life-at-school">Life at School</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact Us</a>
-            <a href="https://wa.me/923142193672" target="_blank" class="whatsapp-btn">
+            <a href="https://wa.me/923363286688" target="_blank" class="whatsapp-btn">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
             </a>
         </nav>
-        <!-- Mobile Burger Menu Icon -->
         <div class="menu-toggle" id="menuOpenBtn">
             <i class="fa-solid fa-bars"></i>
         </div>
     </header>
 
-    <!-- Mobile Drawer Sidebar component -->
     <div class="mobile-sidebar" id="sidebarMenu">
         <div class="sidebar-close" id="menuCloseBtn">
             <i class="fa-solid fa-xmark"></i>
@@ -554,15 +550,13 @@
         <a href="#life-at-school" class="mob-link"><i class="fa-solid fa-images"></i> Life at School</a>
         <a href="#faq" class="mob-link"><i class="fa-solid fa-circle-question"></i> FAQ</a>
         <a href="#contact" class="mob-link"><i class="fa-solid fa-envelope"></i> Contact Us</a>
-        <a href="https://wa.me/923142193672" target="_blank" class="whatsapp-btn-mob">
+        <a href="https://wa.me/923363286688" target="_blank" class="whatsapp-btn-mob">
             <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
         </a>
     </div>
 
-    <!-- Main Content Frame Container -->
     <div class="main-container">
         
-        <!-- Premium Dynamic Carousel/Slider Hero Component -->
         <section id="home" class="hero-slider">
             <div class="slide">
                 <div class="hero-text">
@@ -587,13 +581,11 @@
             </div>
         </section>
 
-        <!-- About Us Content Section -->
         <section id="about" class="section-padding">
             <h2>About Our Academy</h2>
             <p>At Wonder World Academy, we provide a premium world-class learning environment engineered to empower children. Our goal is to focus on top-tier education alongside moral ethics. Equipped with highly qualified teachers, sophisticated conceptual training methodologies, science research ecosystems, and interactive learning infrastructure, we ensure every student achieves excellence.</p>
         </section>
 
-        <!-- Kids Showcase & Gallery Card Component Grid -->
         <section id="life-at-school" class="section-padding">
             <h2>Life at Wonder World Academy</h2>
             <p>Take a look at how our little stars learn, grow, play, and build crucial social skills daily inside our bright campus rooms:</p>
@@ -623,12 +615,11 @@
             </div>
         </section>
 
-        <!-- FAQ Content Section -->
         <section id="faq" class="section-padding">
             <h2>Frequently Asked Questions (FAQ)</h2>
             <div class="faq-item">
-                <h4>Q1: What are the Academy's operational timings?</h4>
-                <p>Ans: Wonder World Academy operates from Monday to Friday, starting from 08:00 AM in the morning until 02:00 PM in the afternoon.</p>
+                <h4>Q1: What are the Academy's operating timings?</h4>
+                <p>Ans: Wonder World Academy operates from Monday to Friday, starting from 08:00 AM in the morning until 01:00 PM in the afternoon.</p>
             </div>
             <div class="faq-item">
                 <h4>Q2: Does the school provide dynamic transport facilities?</h4>
@@ -636,7 +627,6 @@
             </div>
         </section>
 
-        <!-- Dynamic WhatsApp Form Redirection Trigger -->
         <section id="contact" class="section-padding">
             <h2>Get In Touch</h2>
             <p>Have questions regarding admission fees or academic courses? Send your query directly using the form below:</p>
@@ -654,7 +644,6 @@
 
     </div>
 
-    <!-- Footer Component with Integrated Quick Links and Rounded logo.png -->
     <footer>
         <div class="footer-container">
             <div class="footer-box">
@@ -677,12 +666,12 @@
             </div>
             <div class="footer-box">
                 <h4>Contact Details</h4>
-                <p><i class="fa-solid fa-phone"></i> Phone: +92 314 2193672</p>
-                <p><i class="fa-solid fa-envelope"></i> Email: info@wonderworld.edu.pk</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +92 336326688</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: info.wonderworldacademy@gmail.com</p>
             </div>
             <div class="footer-box">
                 <h4>Campus Address</h4>
-                <p><i class="fa-solid fa-location-dot"></i> Shah Rasool Colony, Pakistan</p>
+                <p><i class="fa-solid fa-location-dot"></i> Muneeb Center Plot no 85 A Upper Gizri behind Abid Arcade Karachi South, pakistan</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -690,7 +679,6 @@
         </div>
     </footer>
 
-    <!-- Interactive Toggle Elements & WhatsApp Forwarding Logic script -->
     <script>
         const sidebar = document.getElementById('sidebarMenu');
         const overlay = document.getElementById('overlay');
@@ -698,7 +686,6 @@
         const closeBtn = document.getElementById('menuCloseBtn');
         const mobLinks = document.querySelectorAll('.mob-link');
 
-        // Functions to open/close sidebar
         function openSidebar() {
             sidebar.classList.add('active');
             overlay.classList.add('active');
@@ -714,16 +701,14 @@
         overlay.addEventListener('click', closeSidebar);
         mobLinks.forEach(link => link.addEventListener('click', closeSidebar));
 
-        // Form Submission to WhatsApp redirection script
         document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('formName').value;
             const email = document.getElementById('formEmail').value;
             const message = document.getElementById('formMessage').value;
-            const whatsappNumber = "923142193672"; 
+            const whatsappNumber = "+923363286688"; 
             
-            // Text Structure for user visibility
             const encodedText = encodeURIComponent(
                 `*New Query From Website*\n\n` +
                 `*Name:* ${name}\n` +
